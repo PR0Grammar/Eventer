@@ -1,0 +1,14 @@
+
+.logo{
+    padding-top: 5%;
+}
+
+#logo {
+    font-family: 'Pacifico', cursive;
+    display: inline;
+}
+
+#logoImg {
+    padding-left: 1%;
+    display:inline;
+}
