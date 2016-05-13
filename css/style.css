@@ -1,3 +1,4 @@
+/*Eventer Title and Logos */
 
 .logo{
     padding-top: 5%;
@@ -11,4 +12,13 @@
 #logoImg {
     padding-left: 1%;
     display:inline;
+}
+
+.animatedImg{
+    display: inline;
+}
+
+#movingImg {
+    position: absolute;
+    left:200px;
 }
