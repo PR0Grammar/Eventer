@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
         <!----Script Files--->
-          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_-eLfqpSYqLRJBiDKv2ve2GP7HO-8hH4&callback=initMap" type="text/javascript"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_-eLfqpSYqLRJBiDKv2ve2GP7HO-8hH4&callback=initMap" type="text/javascript"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script type="text/javascript" src="script/script.js"></script>
         <!----Fonts---->
@@ -30,19 +31,33 @@
                           <div class="input-group-addon">&#9729;</div>
                           <input id="idealTemp" type="text" class="form-control" placeholder="Ideal Outdoor Temp">
                         </div>
-                      <button class="btn btn-set btn-primary">&#127777;</button>
+                      <button class="btn btn-set btn-primary">Set Your Temp</button>
                      <div id="tempDisplay" class="col-xs-12"></div>
                 </div>
                 <div class="col-xs-6">
                         <div class="input-group">
                           <div class="input-group-addon">&#9729;</div>
-                          <input id="idealTemp" type="text" class="form-control" placeholder="Ideal Outdoor Temp">
+                          <input id="zipcodeForm" type="text" class="form-control" placeholder="Your Zipcode">
                         </div>
-                      <button class="btn btn-latLon btn-primary">Set Location</button>
+                      <button class="btn btn-setLoc btn-primary">Set Location</button>
                       <button class="btn btn-curLoc btn-primary">Use Current Location</button>
                      <div id="locationDisplay" class="col-xs-12"></div>
                 </div>
             </div>
         </div>
+        
+        <!---boxes--->
+        <div class="col-xs-6">
+            <div id = "box1" class="color1"></div>
+            <div id = "box2" class="color2"></div>
+            <div id = "box3" class="color3"></div>
+        </div>
+
+        <div class="col-xs-6">
+            <div id = "box4" class="color4"></div>
+            <div id = "box5" class="color5"></div>
+            <div id = "box6" class="color6"></div>
+        </div>
+        
     </body>
 </html>
