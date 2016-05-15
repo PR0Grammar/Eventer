@@ -24,22 +24,15 @@
 }
 
 /* Boxes */
+/* check fb*/
+.box {
+    text-align: center;
+    margin-top:5%;
+    margin-right:15%;
+    margin-left:15%;
+}
 
-.color1 {
-    background: #01FF21; 
-}
-.color2 {
-    background: #FF00DC;
-}
-.color3 {
-    background: #01FFFF;
-}
-.color4 {
-    background: #FFD800;
-}
-.color5 {
-    background: #01FF90;
-}
-.color6 {
-    background: #0094FF;
+.box-text{
+    font-size: 2vw;
+    font-family: 'Chewy', cursive;
 }
