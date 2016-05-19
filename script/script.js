@@ -114,7 +114,7 @@ function locationSet () {
                 var zip= data.results[0].address_components[0].long_name
                 var country=data.results[0].address_components[5].short_name
                 $('#locationDisplay').text("Your Location:"+city+","+zip)
-                //USE WEATHER FUNCTION HERE WITH ZIP CODE
+                getForecast(latitude,longitude);
             })
         }
     })
@@ -133,6 +133,7 @@ function currentLocationSet() {
         var lat=position.coords.latitude;
         var long=position.coords.longitude;
         getZip(lat,long);
+
     }
   });
 }
@@ -140,27 +141,33 @@ function currentLocationSet() {
 function getZip(latitude,longitude){
     var url="https://maps.googleapis.com/maps/api/geocode/json?latlng="+latitude+","+longitude+"&key=AIzaSyD_-eLfqpSYqLRJBiDKv2ve2GP7HO-8hH4";
     $.getJSON(url,function(data){
-            var city=data.results[0].address_components[2].long_name
-            var zip= data.results[0].address_components[7].long_name
-            var country=data.results[0].address_components[6].short_name
-            $('#locationDisplay').text("Your Location:"+city+","+zip)
-            getForecast(zip,country);
-    })
-    
+            var city=data.results[0].address_components[2].long_name;
+            var zip= data.results[0].address_components[7].long_name;
+            var country=data.results[0].address_components[6].short_name;
+            $('#locationDisplay').text("Your Location:"+city+","+zip);
+            getForecast(latitude,longitude);
+    });
 }
 
 //OpenWeather
 
-function getForecast(zipcode,country){
+function getForecast(latitude, longitude){
     var api_key="623c7e489e6b97e211bd1d20ccea234d";
-    var url="http://api.openweathermap.org/data/2.5/weather?zip="+zipcode+","+country+"&appid="+api_key;
+    var url="http://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude+"&units=imperial&appid="+api_key;
     $.getJSON(url, function(data) {
-        console.log(data);
+        console.log(data)
+        $.each(data,function(key,list){
+            for(var i=0; i<list.length; i++){
+                if(data.list[i].dt_txt.includes("12:00:00")){
+                    console.log(list[i].dt_txt)
+                }
+            }
+        });
     })
 
 }
 
-//api key for openweathermap = 623c7e489e6b97e211bd1d20ccea234d
-//Wunder=f9dfa1e87efd1b7d
+//forecast api key: 3ddb23835e53ec2d153442d4df34c0d7
+
 
 
