@@ -145,6 +145,21 @@ function getForecast(latitude, longitude){
                     if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
                         $("#movies").append("<li>" + data.list[i].dt_txt + "</li>");
                     }
+                    if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
+                        $("#park").append("<li>" + data.list[i].dt_txt + "</li>");
+                    }
+                    if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
+                        $("#eat").append("<li>" + data.list[i].dt_txt + "</li>");
+                    }
+                    if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
+                        $("#camping").append("<li>" + data.list[i].dt_txt + "</li>");
+                    }
+                    if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
+                        $("#beach").append("<li>" + data.list[i].dt_txt + "</li>");
+                    }
+                    if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
+                        $("#volunteer").append("<li>" + data.list[i].dt_txt + "</li>");
+                    }
                 }
             }
         });
