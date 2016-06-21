@@ -138,19 +138,7 @@ function getForecast(latitude, longitude){
     var api_key="623c7e489e6b97e211bd1d20ccea234d";
     var url="http://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude+"&units=imperial&appid="+api_key;
     $.getJSON(url, function(data) {
-                callBack(data);
-    });
-}
-
-var idealOutdoorTemp;
-function outputUpdate(temp) {
-	document.querySelector('#temp').value = temp;
-	idealOutdoorTemp = temp;
-}
-
-
-function callBack (data) {
-console.log(data);
+        console.log(data);
         $.each(data.list,function(i,value){
             for(i = 0; i< data.list.length; i++){
                 
@@ -171,6 +159,19 @@ console.log(data);
                 }
             }
         });
+    });
+}
+
+var idealOutdoorTemp;
+function outputUpdate(temp) {
+	document.querySelector('#temp').value = temp;
+	idealOutdoorTemp = temp;
+}
+
+
+function callBack (data) {
+console.log(data);
+       
 }
 
 
