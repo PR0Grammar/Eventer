@@ -157,7 +157,8 @@ function callBack (data) {
                 if(data.list[i].dt_txt.includes("12:00:00")){
                     var temperature=data.list[i].main.temp;
                     var weather_condition=data.list[i].weather.main;
-                    
+                    console.log(temperature)
+                    console.log(weather_condition)
                     movieCondition(temperature,weather_condition,idealOutdoorTemp);
                     campCondition(temperature, weather_condition,idealOutdoorTemp);
                     parkCondition(temperature, weather_condition,idealOutdoorTemp);
@@ -194,8 +195,8 @@ function callBack (data) {
 
 
 function movieCondition (temp,cond,ideal){
-    alert('hello');
-    if(cond!="Rain" && cond!="Snow" && temp>=ideal && temp<125) {
+    
+    if(cond!=="Rain" && cond!=="Snow" && temp>=ideal && temp<125) {
         $("#movies").append("<li>" + data.list.dt_txt + "</li>");
     }
     var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
@@ -203,32 +204,32 @@ function movieCondition (temp,cond,ideal){
 }
 
 function campCondition (temp,cond,ideal){
-       if(cond!="Snow" && cond!="Extreme" && temp>=ideal && temp<125) {
+       if(cond!=="Snow" && cond!=="Extreme" && temp>=ideal && temp<125) {
            
         $("#camping").append("<li>" + data.list.dt_txt + "</li>");
     }
 }
 
 function parkCondition (temp,cond,ideal){
-       if(cond!="Snow" && cond!="Rain" && cond!="Clouds" && temp>=ideal && temp<125) {
+       if(cond!=="Snow" && cond!=="Rain" && cond!=="Clouds" && temp>=ideal && temp<125) {
         $("#park").append("<li>" + data.list.dt_txt + "</li>");
     }
 }
 
 function eatingCondition (temp,cond,ideal){
-       if(cond!="Snow" && temp>=ideal && temp<100) {
+       if(cond!=="Snow" && temp>=ideal && temp<100) {
         $("#eat").append("<li>" + data.list.dt_txt + "</li>");
     }
 }
 
 function beachCondition(temp,cond,ideal){
-       if(cond!="Snow" && cond!="Rain" && cond!="Cloud" && temp>=ideal && temp<125) {
+       if(cond!=="Snow" && cond!=="Rain" && cond!=="Cloud" && temp>=ideal && temp<125) {
         $("#eat").append("<li>" + data.list.dt_txt + "</li>");
     }
 }
 
 function volunteerCondition(temp,cond,ideal){
-       if(cond!="Snow" && cond!="Rain"  && temp>=ideal && temp<125) {
+       if(cond!=="Snow" && cond!=="Rain"  && temp>=ideal && temp<125) {
         $("#volunteer").append("<li>" + data.list.dt_txt + "</li>");
     }    
 }
