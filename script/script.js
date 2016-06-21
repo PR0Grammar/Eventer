@@ -154,42 +154,24 @@ function callBack (data) {
      console.log(data.list);
         $.each(data,function(key,list){
             for(var i=0; i<list.length; i++){
-                if(data.list[i].dt_txt.includes("12:00:00")){
-                    console.log(data.list[i].dt_txt);
-                    var temperature=data.list[i].main.temp;
-                    var weather_condition=data.list[i].weather[0].main;
-                    console.log(temperature);
-                    console.log(weather_condition);
-                    console.log(idealOutdoorTemp);
-                    movieCondition(temperature,weather_condition,idealOutdoorTemp);
-                    campCondition(temperature, weather_condition,idealOutdoorTemp);
-                    parkCondition(temperature, weather_condition,idealOutdoorTemp);
-                    eatingCondition(temperature,weather_condition,idealOutdoorTemp);
-                    beachCondition(temperature,weather_condition,idealOutdoorTemp);
-                    volunteerCondition(temperature,weather_condition,idealOutdoorTemp);
-                    /*$("box1").click(function(){
-                          
-                    });
-                    */
-                    // var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
-                    // console.log(formatted);
-                    // }
-                    // if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
-                    //     $("#park").append("<li>" + data.list[i].dt_txt + "</li>");
-                    // }
-                    // if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
-                    //     $("#eat").append("<li>" + data.list[i].dt_txt + "</li>");
-                    // }
-                    // if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
-                    //     $("#camping").append("<li>" + data.list[i].dt_txt + "</li>");
-                    // }
-                    // if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
-                    //     $("#beach").append("<li>" + data.list[i].dt_txt + "</li>");
-                    // }
-                    // if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
-                    //     $("#volunteer").append("<li>" + data.list[i].dt_txt + "</li>");
-                    // }
-                }
+                console.log(list.length);
+                console.log(i);
+                // if(data.list[i].dt_txt.includes("12:00:00")){
+                //     console.log(i);
+                //     var temperature=data.list[i].main.temp;
+                //     var weather_condition=data.list[i].weather[0].main;
+                //     console.log(temperature);
+                //     console.log(weather_condition);
+                //     console.log(idealOutdoorTemp);
+                //     movieCondition(temperature,weather_condition,idealOutdoorTemp);
+                //     campCondition(temperature, weather_condition,idealOutdoorTemp);
+                //     parkCondition(temperature, weather_condition,idealOutdoorTemp);
+                //     eatingCondition(temperature,weather_condition,idealOutdoorTemp);
+                //     beachCondition(temperature,weather_condition,idealOutdoorTemp);
+                //     volunteerCondition(temperature,weather_condition,idealOutdoorTemp);
+                //     // var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
+                //     // console.log(formatted);
+                // }
             }
         });
 }
