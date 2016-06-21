@@ -195,7 +195,7 @@ function callBack (data) {
 
 function movieCondition (temp,cond,ideal){
     if(cond!="Rain" && cond!="Snow" && temp>=ideal && temp<125) {
-        $("#movies").append("<li>" + data.list[i].dt_txt + "</li>");
+        $("#movies").append("<li>" + data.list.dt_txt + "</li>");
     }
     var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
     console.log(formatted);
@@ -203,31 +203,31 @@ function movieCondition (temp,cond,ideal){
 
 function campCondition (temp,cond,ideal){
        if(cond!="Snow" && cond!="Extreme" && temp>=ideal && temp<125) {
-        $("#camping").append("<li>" + data.list[i].dt_txt + "</li>");
+        $("#camping").append("<li>" + data.list.dt_txt + "</li>");
     }
 }
 
 function parkCondition (temp,cond,ideal){
        if(cond!="Snow" && cond!="Rain" && cond!="Clouds" && temp>=ideal && temp<125) {
-        $("#park").append("<li>" + data.list[i].dt_txt + "</li>");
+        $("#park").append("<li>" + data.list.dt_txt + "</li>");
     }
 }
 
 function eatingCondition (temp,cond,ideal){
        if(cond!="Snow" && temp>=ideal && temp<100) {
-        $("#eat").append("<li>" + data.list[i].dt_txt + "</li>");
+        $("#eat").append("<li>" + data.list.dt_txt + "</li>");
     }
 }
 
 function beachCondition(temp,cond,ideal){
        if(cond!="Snow" && cond!="Rain" && cond!="Cloud" && temp>=ideal && temp<125) {
-        $("#eat").append("<li>" + data.list[i].dt_txt + "</li>");
+        $("#eat").append("<li>" + data.list.dt_txt + "</li>");
     }
 }
 
 function volunteerCondition(temp,cond,ideal){
        if(cond!="Snow" && cond!="Rain"  && temp>=ideal && temp<125) {
-        $("#volunteer").append("<li>" + data.list[i].dt_txt + "</li>");
+        $("#volunteer").append("<li>" + data.list.dt_txt + "</li>");
     }    
 }
 
