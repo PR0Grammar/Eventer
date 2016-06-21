@@ -138,7 +138,7 @@ function getForecast(latitude, longitude){
     var api_key="623c7e489e6b97e211bd1d20ccea234d";
     var url="http://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude+"&units=imperial&appid="+api_key;
     $.getJSON(url, function(data) {
-                callBack();
+                callBack(data);
     });
 }
 
