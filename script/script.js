@@ -138,23 +138,9 @@ function getForecast(latitude, longitude){
     var api_key="623c7e489e6b97e211bd1d20ccea234d";
     var url="http://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude+"&units=imperial&appid="+api_key;
     $.getJSON(url, function(data) {
-                callBack(data);
-
-    })
-}
-
-var idealOutdoorTemp;
-function outputUpdate(temp) {
-	document.querySelector('#temp').value = temp;
-	idealOutdoorTemp = temp;
-}
-
-
-function callBack (data) {
-        $.each(data,function(key,list){
+                $.each(data,function(key,list){
             for(var i=0; i<list.length; i++){
                 if(data.list[i].dt_txt.includes("12:00:00")){
-                    console.log(i);
                     var temperature=data.list[i].main.temp;
                     var weather_condition=data.list[i].weather[0].main;
                     console.log(temperature);
@@ -171,7 +157,39 @@ function callBack (data) {
                 }
             }
         });
+
+    });
 }
+
+var idealOutdoorTemp;
+function outputUpdate(temp) {
+	document.querySelector('#temp').value = temp;
+	idealOutdoorTemp = temp;
+}
+
+
+// function callBack (data) {
+//     console.log(data);
+//         // $.each(data,function(key,list){
+//         //     for(var i=0; i<list.length; i++){
+//         //         if(data.list[i].dt_txt.includes("12:00:00")){
+//         //             var temperature=data.list[i].main.temp;
+//         //             var weather_condition=data.list[i].weather[0].main;
+//         //             console.log(temperature);
+//         //             console.log(weather_condition);
+//         //             console.log(idealOutdoorTemp);
+//         //             movieCondition(temperature,weather_condition,idealOutdoorTemp);
+//         //             campCondition(temperature, weather_condition,idealOutdoorTemp);
+//         //             parkCondition(temperature, weather_condition,idealOutdoorTemp);
+//         //             eatingCondition(temperature,weather_condition,idealOutdoorTemp);
+//         //             beachCondition(temperature,weather_condition,idealOutdoorTemp);
+//         //             volunteerCondition(temperature,weather_condition,idealOutdoorTemp);
+//         //             // var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
+//         //             // console.log(formatted);
+//         //         }
+//         //     }
+//         // });
+// }
 
 
 
@@ -180,8 +198,8 @@ function movieCondition (temp,cond,ideal){
     if(cond!=="Rain" && cond!=="Snow" && temp>=ideal && temp<125) {
         $("#movies").append("<li>" + data.list.dt_txt + "</li>");
     }
-    var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
-    console.log(formatted);
+    //var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
+    //console.log(formatted);
 }
 
 function campCondition (temp,cond,ideal){
