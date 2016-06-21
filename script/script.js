@@ -194,6 +194,7 @@ function callBack (data) {
 
 
 function movieCondition (temp,cond,ideal){
+    alert('hello');
     if(cond!="Rain" && cond!="Snow" && temp>=ideal && temp<125) {
         $("#movies").append("<li>" + data.list.dt_txt + "</li>");
     }
@@ -203,6 +204,7 @@ function movieCondition (temp,cond,ideal){
 
 function campCondition (temp,cond,ideal){
        if(cond!="Snow" && cond!="Extreme" && temp>=ideal && temp<125) {
+           
         $("#camping").append("<li>" + data.list.dt_txt + "</li>");
     }
 }
