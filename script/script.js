@@ -8,7 +8,6 @@ $(document).ready(function(){
     $(window).resize(function() {
         resizeBlocks();
     })
-    clickBoxes();
 });
 
 //Boxes
@@ -25,26 +24,9 @@ function resizeBlocks(){
     //do the same thing for the width so it fits smaller.
 }
 
-function clickBoxes(){
-    $("#box1").click(function(){
-        alert ("clickerino");
-    });
-    $("#box2").click(function(){
-        alert ("clickerino");
-    }); 
-    $("#box3").click(function(){
-        alert ("clickerino");
-    }); 
-    $("#box4").click(function(){
-        alert ("clickerino");
-    }); 
-    $("#box5").click(function(){
-        alert ("clickerino");
-    }); 
-    $("#box6").click(function(){
-        alert ("clickerino");
-    }); 
-}
+// function clickBoxes(){
+    
+// }
 
 //Cloud Animation
 function moveLeft() {
@@ -155,11 +137,14 @@ function getForecast(latitude, longitude){
     var api_key="623c7e489e6b97e211bd1d20ccea234d";
     var url="http://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude+"&units=imperial&appid="+api_key;
     $.getJSON(url, function(data) {
-        console.log(data)
+        console.log(data.list);
         $.each(data,function(key,list){
             for(var i=0; i<list.length; i++){
                 if(data.list[i].dt_txt.includes("12:00:00")){
-                    console.log(list[i].dt_txt)
+                    console.log(data.list[i].main.temp);
+                    if(data.list[i].main.temp > 60 && data.list[i].main.temp < 100){
+                        $("#movies").append("<li>" + data.list[i].dt_txt + "</li>");
+                    }
                 }
             }
         });
