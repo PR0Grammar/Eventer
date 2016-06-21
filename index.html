@@ -28,13 +28,17 @@
             <!---Form for setting temperature---->
             <div class="row">
                 <div class="col-xs-6">
-                        <div class="input-group">
-                          <div class="input-group-addon">&#9729;</div>
-                          <input id="idealTemp" type="text" class="form-control" placeholder="Ideal Outdoor Temp">
-                        </div>
-                      <button class="btn btn-set btn-primary">Set Your Temp</button>
-                     <div id="tempDisplay" class="col-xs-12"></div>
+                <output id="temp">70 &deg;</output>
+                <input type="range" id="idealOutdoorTemp" value="70" min="20" max="120" oninput="outputUpdate(value)">
+<!--                        <div class="input-group">-->
+<!--                          <div class="input-group-addon">&#9729;</div>-->
+<!--                          <input id="idealTemp" type="text" class="form-control" placeholder="Ideal Outdoor Temp">-->
+<!--                        </div>-->
+<!--                      <button class="btn btn-set btn-primary">Set Your Temp</button>-->
+<!--                     <div id="tempDisplay" class="col-xs-12"></div>-->
                 </div>
+                
+
                 <div class="col-xs-6">
                         <div class="input-group">
                           <div class="input-group-addon">&#9729;</div>
@@ -46,7 +50,6 @@
                 </div>
             </div>
         </div>
-        
         <!---Boxes--->
         <div class="col-xs-6">
             <div id = "box1" class="box">
