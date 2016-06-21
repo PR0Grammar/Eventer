@@ -156,7 +156,9 @@ function callBack (data) {
             for(var i=0; i<list.length; i++){
                 if(data.list[i].dt_txt.includes("12:00:00")){
                     var temperature=data.list[i].main.temp;
-                    var weather_condition=data.list[i].weather.main;
+                    var weather_condition=data.list[i].weather[0].main;
+                    
+                    
                     console.log(temperature);
                     console.log(weather_condition);
                     console.log(idealOutdoorTemp);
