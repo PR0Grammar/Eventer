@@ -154,24 +154,6 @@ function getForecast(latitude, longitude){
                     eatingCondition(temperature,weather_condition,idealOutdoorTemp);
                     beachCondition(temperature,weather_condition,idealOutdoorTemp);
                     volunteerCondition(temperature,weather_condition,idealOutdoorTemp);
-        // console.log(data);
-        // $.each(data.list,function(i,value){
-        //     for(i = 0; i< data.list.length; i++){
-        //         if(data.list[i].dt_txt.includes("21:00:00")){
-        //             var temperature=data.list[i].main.temp;
-        //             var weather_condition=data.list[i].weather[0].main;
-        //             console.log(temperature);
-        //             console.log(weather_condition);
-        //             console.log(idealOutdoorTemp);
-        //             movieCondition(temperature,weather_condition,idealOutdoorTemp);
-        //             campCondition(temperature, weather_condition,idealOutdoorTemp);
-        //             parkCondition(temperature, weather_condition,idealOutdoorTemp);
-        //             eatingCondition(temperature,weather_condition,idealOutdoorTemp);
-        //             beachCondition(temperature,weather_condition,idealOutdoorTemp);
-        //             volunteerCondition(temperature,weather_condition,idealOutdoorTemp);
-        //             // var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
-        //             // console.log(formatted);
-        //         }
                 }
             }
         });
@@ -186,17 +168,10 @@ function outputUpdate(temp) {
 }
 
 
-//function callBack (data) {
-//console.log(data);
-       
-//}
-
-
-
 function movieCondition (temp,cond,ideal){
     
     if(cond!=="Rain" && cond!=="Snow" && temp>=ideal && temp<125) {
-        $("#movies").append("<li>" + data.list.dt_txt + "</li>");
+        $("#movies").append("<li>" + data.list[i].dt_txt + "</li>");
     }
     //var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
     //console.log(formatted);
@@ -205,31 +180,31 @@ function movieCondition (temp,cond,ideal){
 function campCondition (temp,cond,ideal){
        if(cond!=="Snow" && cond!=="Extreme" && temp>=ideal && temp<125) {
            
-        $("#camping").append("<li>" + data.list.dt_txt + "</li>");
+        $("#camping").append("<li>" + data.list[i].dt_txt + "</li>");
     }
 }
 
 function parkCondition (temp,cond,ideal){
        if(cond!=="Snow" && cond!=="Rain" && cond!=="Clouds" && temp>=ideal && temp<125) {
-        $("#park").append("<li>" + data.list.dt_txt + "</li>");
+        $("#park").append("<li>" + data.list[i].dt_txt + "</li>");
     }
 }
 
 function eatingCondition (temp,cond,ideal){
        if(cond!=="Snow" && temp>=ideal && temp<100) {
-        $("#eat").append("<li>" + data.list.dt_txt + "</li>");
+        $("#eat").append("<li>" + data.list[i].dt_txt + "</li>");
     }
 }
 
 function beachCondition(temp,cond,ideal){
        if(cond!=="Snow" && cond!=="Rain" && cond!=="Cloud" && temp>=ideal && temp<125) {
-        $("#eat").append("<li>" + data.list.dt_txt + "</li>");
+        $("#eat").append("<li>" + data.list[i].dt_txt + "</li>");
     }
 }
 
 function volunteerCondition(temp,cond,ideal){
        if(cond!=="Snow" && cond!=="Rain"  && temp>=ideal && temp<125) {
-        $("#volunteer").append("<li>" + data.list.dt_txt + "</li>");
+        $("#volunteer").append("<li>" + data.list[i].dt_txt + "</li>");
     }    
 }
 
