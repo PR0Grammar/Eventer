@@ -152,7 +152,7 @@ function outputUpdate(temp) {
 function callBack (data) {
     console.log(data);
         $.each(data.list,function(i,value){
-            for(var i=0; i<list.length; i++){
+            for(var i=0; i<data.list.length; i++){
                 if(data.list[i].dt_txt.includes("12:00:00")){
                     var temperature=data.list[i].main.temp;
                     var weather_condition=data.list[i].weather[0].main;
