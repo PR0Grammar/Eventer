@@ -157,8 +157,9 @@ function callBack (data) {
                 if(data.list[i].dt_txt.includes("12:00:00")){
                     var temperature=data.list[i].main.temp;
                     var weather_condition=data.list[i].weather.main;
-                    console.log(temperature)
-                    console.log(weather_condition)
+                    console.log(temperature);
+                    console.log(weather_condition);
+                    console.log(idealOutdoorTemp);
                     movieCondition(temperature,weather_condition,idealOutdoorTemp);
                     campCondition(temperature, weather_condition,idealOutdoorTemp);
                     parkCondition(temperature, weather_condition,idealOutdoorTemp);
