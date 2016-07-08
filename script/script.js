@@ -8,6 +8,12 @@ $(document).ready(function(){
     $(window).resize(function() {
         resizeBlocks();
     })
+
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
+
 });
 
 
@@ -26,13 +32,13 @@ function resizeBlocks(){
 }
 
 // function clickBoxes(){
-    
+
 // }
 
 //Cloud Animation
 function moveLeft() {
     $("#movingImg").animate({left: "-=30%"}, 2000, "swing", moveRight);
-    
+
 }
 
 function moveRight() {
@@ -42,7 +48,7 @@ function moveRight() {
 //Ideal Temp
 function idealTemp(){
     $(".btn-set").click(function(){
-        var temperature= $("#idealTemp").val(); //use this for the conditionals 
+        var temperature= $("#idealTemp").val(); //use this for the conditionals
         numberCheck(temperature);
         tempDisplay(temperature);
     });
@@ -56,7 +62,7 @@ function numberCheck(temp){
     else if(temp > 149){
         alert("Too Hot!");
         idealTemp().stop();
-    } 
+    }
     else if (temp == "") {
         alert("Enter a number");
         idealTemp().stop();
@@ -108,7 +114,7 @@ function currentLocationSet() {
     var locDiv=$("#locationDisplay")
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
+    } else {
         locDiv.text("Geolocation is not supported by this browser.");
         currentLocationSet().stop();
     }
@@ -158,7 +164,7 @@ function getForecast(latitude, longitude){
             }
         });
      });
- 
+
 }
 
 var idealOutdoorTemp;
@@ -169,7 +175,7 @@ function outputUpdate(temp) {
 
 
 function movieCondition (temp,cond,ideal){
-    
+
     if(cond!=="Rain" && cond!=="Snow" && temp>=ideal && temp<125) {
         $("#movies").append("<li>" + data.list[i].dt_txt + "</li>");
     }
@@ -179,7 +185,7 @@ function movieCondition (temp,cond,ideal){
 
 function campCondition (temp,cond,ideal){
        if(cond!=="Snow" && cond!=="Extreme" && temp>=ideal && temp<125) {
-           
+
         $("#camping").append("<li>" + data.list[i].dt_txt + "</li>");
     }
 }
@@ -205,7 +211,7 @@ function beachCondition(temp,cond,ideal){
 function volunteerCondition(temp,cond,ideal){
        if(cond!=="Snow" && cond!=="Rain"  && temp>=ideal && temp<125) {
         $("#volunteer").append("<li>" + data.list[i].dt_txt + "</li>");
-    }    
+    }
 }
 
 
