@@ -1,10 +1,7 @@
 $(document).ready(function() {
   moveRight();
-  idealTemp();
   locationSet();
   currentLocationSet();
-  randomBoxColors();
-  resizeBlocks();
   $(window).resize(function() {
     resizeBlocks();
   });
@@ -13,43 +10,6 @@ $(document).ready(function() {
     // put your options and callbacks here
   });
 });
-
-//Boxes
-
-function randomBoxColors() {
-  var colors = [
-    '#7FDBFF',
-    '#0074D9',
-    '#001f3f',
-    '#39CCCC',
-    '#3D9970',
-    '#2ECC40',
-    '#01FF70',
-    '#FFDC00',
-    '#FF851B',
-    '#FF4136',
-    '#85144b',
-    '#F012BE',
-    '#B10DC9',
-    '#AAAAAA',
-    '#DDDDDD',
-  ];
-  $('.box').each(function() {
-    $(this).css(
-      'background',
-      colors[Math.floor(Math.random() * colors.length)],
-    );
-  });
-}
-
-function resizeBlocks() {
-  $('.box').height($('.box').width() / 3);
-  //do the same thing for the width so it fits smaller.
-}
-
-// function clickBoxes(){
-
-// }
 
 //Cloud Animation
 function moveLeft() {
@@ -60,34 +20,6 @@ function moveRight() {
   $('#movingImg').animate({ left: '+=30%' }, 2000, 'swing', moveLeft);
 }
 
-//Ideal Temp
-function idealTemp() {
-  $('.btn-set').click(function() {
-    var temperature = $('#idealTemp').val(); //use this for the conditionals
-    numberCheck(temperature);
-    tempDisplay(temperature);
-  });
-}
-
-function numberCheck(temp) {
-  if (isNaN(temp)) {
-    alert('Enter a number');
-    idealTemp().stop();
-  } else if (temp > 149) {
-    alert('Too Hot!');
-    idealTemp().stop();
-  } else if (temp == '') {
-    alert('Enter a number');
-    idealTemp().stop();
-  } else if (temp < 20) {
-    alert('Too Cold!');
-    idealTemp().stop();
-  }
-}
-
-function tempDisplay(temp) {
-  $('#tempDisplay').text('Your Ideal Temperature: ' + temp);
-}
 
 //Location
 
@@ -175,61 +107,3 @@ function getForecast(latitude, longitude) {
     }
   });
 }
-
-var idealOutdoorTemp;
-function outputUpdate(temp) {
-  document.querySelector('#temp').value = temp;
-  idealOutdoorTemp = temp;
-}
-
-function movieCondition(temp, cond, ideal) {
-  if (cond !== 'Rain' && cond !== 'Snow' && temp >= ideal && temp < 125) {
-    $('#movies').append('<li>' + data.list[i].dt_txt + '</li>');
-  }
-  //var formatted = $.datepicker.formatDate("M d, yy", new Date(data.list[i].dt_txt));
-  //console.log(formatted);
-}
-
-function campCondition(temp, cond, ideal) {
-  if (cond !== 'Snow' && cond !== 'Extreme' && temp >= ideal && temp < 125) {
-    $('#camping').append('<li>' + data.list[i].dt_txt + '</li>');
-  }
-}
-
-function parkCondition(temp, cond, ideal) {
-  if (
-    cond !== 'Snow' &&
-    cond !== 'Rain' &&
-    cond !== 'Clouds' &&
-    temp >= ideal &&
-    temp < 125
-  ) {
-    $('#park').append('<li>' + data.list[i].dt_txt + '</li>');
-  }
-}
-
-function eatingCondition(temp, cond, ideal) {
-  if (cond !== 'Snow' && temp >= ideal && temp < 100) {
-    $('#eat').append('<li>' + data.list[i].dt_txt + '</li>');
-  }
-}
-
-function beachCondition(temp, cond, ideal) {
-  if (
-    cond !== 'Snow' &&
-    cond !== 'Rain' &&
-    cond !== 'Cloud' &&
-    temp >= ideal &&
-    temp < 125
-  ) {
-    $('#eat').append('<li>' + data.list[i].dt_txt + '</li>');
-  }
-}
-
-function volunteerCondition(temp, cond, ideal) {
-  if (cond !== 'Snow' && cond !== 'Rain' && temp >= ideal && temp < 125) {
-    $('#volunteer').append('<li>' + data.list[i].dt_txt + '</li>');
-  }
-}
-
-//forecast api key: 3ddb23835e53ec2d153442d4df34c0d7
