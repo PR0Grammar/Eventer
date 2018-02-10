@@ -120,21 +120,6 @@ function locationSet() {
 }
 
 function currentLocationSet() {
-  // $('.btn-curLoc').click(function() {
-  //   var locDiv = $('#locationDisplay');
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(showPosition);
-  //   } else {
-  //     locDiv.text('Geolocation is not supported by this browser.');
-  //     currentLocationSet().stop();
-  //   }
-  //   function showPosition(position) {
-  //     var lat = position.coords.latitude;
-  //     var long = position.coords.longitude;
-  //     getZip(lat, long);
-  //   }
-  // });
-
   const locationDisplay = document.getElementById('locationDisplay');
   const geoBtn = document.getElementById('geolocation');
   geoBtn.addEventListener('click', getLocation);
@@ -160,7 +145,6 @@ function getZip(latitude, longitude) {
     longitude +
     '&key=AIzaSyD_-eLfqpSYqLRJBiDKv2ve2GP7HO-8hH4';
   $.getJSON(url, function(data) {
-    console.log(data);
     const formattedAddress = data.results[1].formatted_address;
     $('#locationDisplay').text('Your Location:' + formattedAddress);
     getForecast(latitude, longitude);
@@ -179,25 +163,16 @@ function getForecast(latitude, longitude) {
     '&units=imperial&appid=' +
     api_key;
   $.getJSON(url, function(data) {
-    console.log(data.list);
-    $.each(data, function(key, list) {
-      for (var i = 0; i < list.length; i++) {
-        if (data.list[i].dt_txt.includes('12:00:00')) {
-          console.log(data.list[i].main.temp);
-          var temperature = data.list[i].main.temp;
-          var weather_condition = data.list[i].weather[0].main;
-          console.log(temperature);
-          console.log(weather_condition);
-          console.log(idealOutdoorTemp);
-          movieCondition(temperature, weather_condition, idealOutdoorTemp);
-          campCondition(temperature, weather_condition, idealOutdoorTemp);
-          parkCondition(temperature, weather_condition, idealOutdoorTemp);
-          eatingCondition(temperature, weather_condition, idealOutdoorTemp);
-          beachCondition(temperature, weather_condition, idealOutdoorTemp);
-          volunteerCondition(temperature, weather_condition, idealOutdoorTemp);
-        }
-      }
-    });
+    for (let i = 0; i < data.list.length; i++) {
+      // if(data.list[i].dt_txt.includes(''))
+      const date = data.list[i].dt_txt;
+      const condition = data.list[i].weather[0].main;
+      const conditionDesc = data.list[i].weather[0].description;
+      const mainTemp = data.list[i].main.temp;
+      const completeWeatherInfo = `At ${date} the temperature is ${mainTemp}. It can best be described as ${conditionDesc}. That means mainly ${condition}.`;
+      console.log(completeWeatherInfo);
+      console.log('---------------------------------------------');
+    }
   });
 }
 
