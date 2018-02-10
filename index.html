@@ -16,73 +16,33 @@
         <!----Fonts---->
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
-
     </head>
     <body>
         <div class="container">
             <!---Logo and Image--->
-            <div class="row">
-                <div class="col-xs-12 logo">
-                    <h1 id="logo">Eventer</h1>
-                    <img id="logoImg" src="images/logo.png">
-                    <div class="animatedImg"><img id="movingImg" src="images/cloud.png"></div>
-                    <hr>
-                </div>
+          <div class="row">
+            <div class="col-xs-12 logo">
+              <h1 id="logo">Eventer</h1>
+              <img id="logoImg" src="images/logo.png">
+              <div class="animatedImg"><img id="movingImg" src="images/cloud.png"></div>
+              <hr>
             </div>
+          </div>
             <!---Form for setting temperature---->
             <div class="row">
-                <div class="col-xs-6">
-                <output id="temp">70 &deg;</output>
-                <input type="range" id="idealOutdoorTemp" value="70" min="20" max="120" oninput="outputUpdate(value)">
-<!--                        <div class="input-group">-->
-<!--                          <div class="input-group-addon">&#9729;</div>-->
-<!--                          <input id="idealTemp" type="text" class="form-control" placeholder="Ideal Outdoor Temp">-->
-<!--                        </div>-->
-<!--                      <button class="btn btn-set btn-primary">Set Your Temp</button>-->
-<!--                     <div id="tempDisplay" class="col-xs-12"></div>-->
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    &#9729;
+                  </div>
+                  <input id="zipcodeForm" type="text" class="form-control" placeholder="Your Zipcode">
                 </div>
-
-
-                <div class="col-xs-6">
-                        <div class="input-group">
-                          <div class="input-group-addon">&#9729;</div>
-                          <input id="zipcodeForm" type="text" class="form-control" placeholder="Your Zipcode">
-                        </div>
-                      <button class="btn btn-setLoc btn-primary">Set Location</button>
-                      <button id="geolocation" class="btn btn-primary">Use Current Location</button>
-                     <div id="locationDisplay" class="col-xs-12"></div>
-                </div>
+                <button class="btn btn-setLoc btn-primary">Set Location</button>
+                <button id="geolocation" class="btn btn-primary">Use Current Location</button>
+                <div id="locationDisplay" class="col-xs-12"></div>
+              </div>
             </div>
         </div>
-        <!---Boxes--->
-        <div class="col-xs-6">
-            <div id = "box1" class="box">
-                <h1 class="box-text">Go to the Movies</h1>
-                <ol id = "movies"></ol>
-            </div>
-            <div id = "box2" class="box">
-                <h1 class="box-text">Go to the Park</h1>
-                <ol id = "park"></ol>
-            </div>
-            <div id = "box3" class="box">
-                <h1 class="box-text">Places to Eat</h1>
-                <ol id = "eat"></ol>
-            </div>
-        </div>
-        <div class="col-xs-6">
-            <div id = "box4" class="box">
-                <h1 class="box-text">Camping</h1>
-                <ol id = "camping"></ol>
-            </div>
-            <div id = "box5" class="box">
-                <h1 class="box-text">Out to the Pool/Beach</h1>
-                <ol id = "beach"></ol>
-            </div>
-            <div id = "box6" class="box">
-                <h1 class="box-text">Volunteer Work</h1>
-                <ol id = "volunteer"></ol>
-            </div>
-        </div>
-        <div id="calendar"></div>
+        <!--- EVENTS--->
     </body>
 </html>
