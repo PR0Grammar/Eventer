@@ -1,8 +1,8 @@
 # Eventer
-Plan your day without searching for a day.
+Plan your week without searching for conditions.
 
-Have you ever planned for an event, but have to search for the best day for it?
+Have you ever planned for a family week trip, but don't want to go through the options depending on the weather?
 
-Eventer makes it easy for you to pick your day depending on your plans without you having to look for the best days!
+Eventer makes it easy for you to pick your events depending on the weather!
 
 
