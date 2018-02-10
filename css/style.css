@@ -22,20 +22,6 @@
     position: absolute;
     left:200px;
 }
-
-/* Boxes */
-.box {
-    text-align: center;
-    margin-top:5%;
-    margin-right:15%;
-    margin-left:15%;
-}
-
-.box-text{
-    font-size: 2vw;
-    font-family: 'Chewy', cursive;
-}
-#temp{
-    text-align:center;
-    
+.set-date label{
+  display:block;
 }
